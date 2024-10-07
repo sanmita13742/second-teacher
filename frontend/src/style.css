@@ -21,22 +21,20 @@ body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, var(--dark-academia), var(--dark-academia-accent));
     color: var(--ghost-white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
+    margin: 0;
     overflow: hidden;
 }
 
-/* App container styling */
+/* Make the container full screen and scrollable */
 .App {
     background-color: rgba(107, 75, 62, 0.8);
     padding: 3rem;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    max-width: 700px;
-    width: 90%;
-    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
 }
 
 /* Heading */
@@ -95,41 +93,32 @@ button {
     transition: background-color 0.3s ease;
     margin-top: 1rem;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 button:hover {
     background-color: var(--lion);
 }
 
-/* Error message */
-.error {
-    color: red;
-    margin-top: 1rem;
+/* Cards Container - make scrollable */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-/* Resource list */
-.resource-list {
-    margin-top: 5rem;
-    width: 100%;
-    /* max-height: 400px;
-    overflow-y: auto; */
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
+/* Card Styling */
+.card {
     background-color: var(--dark-academia-accent);
-    /* padding: 1rem; */
-    margin-bottom: 1rem;
+    padding: 1rem;
     border-radius: 8px;
+    flex: 1 1 calc(33% - 1rem); /* Adjust to show 3 cards in a row */
     transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: left;
 }
 
-li:hover {
-    transform: scale(1.02);
+.card:hover {
+    transform: scale(1.05);
     background-color: var(--liver);
 }
 
@@ -165,5 +154,9 @@ p {
 
     input, select, button {
         font-size: 1rem;
+    }
+
+    .card {
+        flex: 1 1 100%;
     }
 }

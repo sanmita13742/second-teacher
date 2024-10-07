@@ -7,7 +7,7 @@ async function searchGoogle(query) {
             params: {
                 q: query,
                 api_key: config.SERPAPI_KEY,
-                num: 10
+                num: 50
             }
         });
 

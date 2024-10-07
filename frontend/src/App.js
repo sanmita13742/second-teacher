@@ -25,8 +25,14 @@ function App() {
         }
     };
 
+    const goBack = () => {
+        window.history.back();
+    };
+
     return (
         <div className="App">
+
+
             <h1>SECOND TEACHER</h1>
             <input
                 type="text"
@@ -48,18 +54,20 @@ function App() {
 
             <div className="resource-list">
                 {resources.length > 0 ? (
-                    <ul>
+                    <div className="cards">
                         {resources.map((resource, index) => (
-                            <li key={index}>
+                            <div key={index} className="card">
                                 <a href={resource.link} target="_blank" rel="noopener noreferrer">
                                     {resource.title}
                                 </a>
                                 <p>{resource.snippet}</p>
-                            </li>
+                            </div>
                         ))}
-                    </ul>
+                                        <button className="button" onClick={goBack}>Back</button>
+
+                    </div>
                 ) : (
-                    !loading && <p className="no-results">No resources found. Try another topic.</p>
+                    !loading && <p className="no-results">SummerHacks Hackathon</p>
                 )}
             </div>
         </div>
