@@ -59,13 +59,24 @@ This **Resource Library Web App** is a simple and intuitive platform where users
    npm install
    ```
 
-4. Start the development server:
+4. Start the backend server:
 
    ```bash
+   cd backend
+   npm install
+   npm start
+   ```
+5. Open your browser and go to `http://localhost:5000`
+
+6. Start the development server:
+
+   ```bash
+   cd frontend
+   npm install
    npm start
    ```
 
-5. Open your browser and go to `http://localhost:3000`.
+7. Open your browser and go to `http://localhost:3000`. - main webpage
 
 ## Usage
 
@@ -95,12 +106,20 @@ const response = await axios.get('http://localhost:5000/search', {
     params: { topic, format }
 });
 ```
+## API
+Sign Up for SERP API:  Sign up on a platform SerpApi and get your API key.
+https://serpapi.com/
 
+Find the API Key: Once registered, the API key will be available in your account dashboard. 
+Paste that in your config.js file in the backend directory.
+```
+module.exports = {
+    SERPAPI_KEY: 'YOUR_API_KEY'
+};
 
-
-## Contributions
-
+```
 
 ## Note
 This project was done for Summer Hacks Hackathon
+
 ```
